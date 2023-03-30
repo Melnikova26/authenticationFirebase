@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSO</title>
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+        <div class="header__logo">
+            <img src="./assets/img/logo.svg" alt="Logo">
+        </div>
+        <div class="header__logo-text">Single sign-on (SSO)</div>
+        </header>
+        <main class="main">
+            <div class="main__text">
+                <div class="main__title">Welcome BAck !</div>
+                <div class="main__desc">Enter your ID and Password to continue</div>
+            </div>
+            <div class="main__sign-in">
+                <div class="main__header">Sign in</div>
+                <div class="main__subheader">to Access the portal</div>
+
+                <!--Форма для входа-->
+                <div class="main__in">
+                    <form class="form" action="#">
+                        <input class="form__email" required=true name="email" type="text" placeholder="Enter Email">
+                        <input class="form__password" required=true name="password" type="password" placeholder="Enter Password">
+                        <button class="form__btn sign-in">Login</button>
+                    </form>
+                    <div class="main__link">
+                        <a href="#">Sign up</a>
+                    </div>
+                </div>
+                
+
+                <!--Форма для регистрации-->
+                <div class="main__up">
+                    <form class="form" action="#">
+                        <input class="form__email" required=true name="email" type="text" placeholder="Enter Email">
+                        <input class="form__password" required=true name="password" type="password" placeholder="Enter Password">
+                        <button class="form__btn sign-up">Sign up</button>
+                    </form>
+                    <div class="main__link">
+                        <a href="#">Sign in</a>
+                    </div>
+                </div>
+
+                
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__text">
+                Copyright &copy; 2022 Commlink Info Tech Ltd. All rights reserved. 
+            </div>
+            
+        </footer>
+
+    </div>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <div class="modal__close">&times;</div>
+                <h1 class="modal__header">Ура!</h1>
+                <p class="modal__text">Регистрация прошла успешно!</p>
+                <button class="button form__btn">Список пользователей</button>
+            </div>
+        </div>
+    </div>
+    <div class="users__main">
+        <div class="users"></div>
+        <button class="form__btn users__btn">Вернуться на главный экран</button>
+    </div>
+
+    <script src="./assets/js/bundle.js" ></script>
+</body>
+</html>
