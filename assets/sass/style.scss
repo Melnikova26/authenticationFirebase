@@ -64,8 +64,8 @@ body {
         font-size: 28px;
     }
     &__sign-in {
-        width: 364px;
         text-align: center;
+        width: 364px;
     }
     &__header {
         text-transform: uppercase;
@@ -208,4 +208,24 @@ body {
 .button {
     width: 50%;
     border-radius: 5px;
+}
+
+@media(max-width: 912px){
+    .wrapper {
+        justify-items: center;
+        text-align: center;
+        padding: 0;
+        background: url(../img/bubble.png) center/cover no-repeat;
+    }
+    .main {
+        justify-content: center;
+    }
+}
+
+@media(max-width: 370px){
+    .main {
+        &__sign-in {
+            width: 98%;
+        }
+    }
 }
