@@ -57,20 +57,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     btnUp.addEventListener('click', (e) => workWithUser(e, upInputs, createUser));
     btnIn.addEventListener('click', (e) => workWithUser(e, inInputs, signInUser));
-
     button.addEventListener('click', getData);
     usersListBtn.addEventListener('click', function(){
-        document.querySelector('.wrapper').style.display = 'block';
+        document.querySelector('.wrapper').style.display = 'grid';
         document.querySelector('.users__main').style.display = 'none';
     });
-
-
-
-
-
-
-
-
-
 
 });
