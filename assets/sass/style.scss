@@ -209,6 +209,13 @@ body {
     width: 50%;
     border-radius: 5px;
 }
+@media(max-width: 1200px){
+    .wrapper {
+        padding: 43px 60px 22px 80px;
+    }
+
+}
+
 
 @media(max-width: 912px){
     .wrapper {
