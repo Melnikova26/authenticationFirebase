@@ -16,7 +16,21 @@
                     <img src="./assets/img/logo.svg" alt="Logo">
                 </div>
                 <div class="header__right">
-                    <input type="search" class="search" placeholder="Search">
+                    <div class="header__find">
+                        <input type="search" class="header__search" placeholder="Search">
+                        <!-- <div class="header__results">
+                            <a href="" class="header__card">
+                                <img class="header__search-img" src="./assets/img/aladdin.png" alt="">
+                                <div class="header__descr">
+                                    <div class="header__subheader">Aladdin</div>
+                                    <div class="header__text">Original Motion Picture Soundtrack</div>
+                                </div>
+
+                            </a>
+
+                        </div> -->
+                    </div>
+                    
                     <div class="header__img">
                         <img src="./assets/img/avatar.png" alt="Avatar">
                     </div>
@@ -24,101 +38,8 @@
             </header>
             <main class="main">
                 <h2 class="main__header">Original Soundtrack</h2>
-                <div class="main__items">
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/good-omens.png" alt="Good Omens">
-                        </div>
-                        <div class="main__subheader">Good Omens</div>
-                        <div class="main__text">David Arnold</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/aladdin.png" alt="Aladdin">
-                        </div>
-                        <div class="main__subheader">Aladdin</div>
-                        <div class="main__text">Original Motion Picture Soundtrack</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/sabrina.png" alt="Sabrina">
-                        </div>
-                        <div class="main__subheader">Sabrina</div>
-                        <div class="main__text">Adam Taylor</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/umbrella-academy.png" alt="The Umbrella Academy">
-                        </div>
-                        <div class="main__subheader">The Umbrella Academy</div>
-                        <div class="main__text">Jeff Russo</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/deadpool.png" alt="Deadpool 2">
-                        </div>
-                        <div class="main__subheader">Deadpool 2</div>
-                        <div class="main__text">Petey Martin</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/star.png" alt="A Star Is Born">
-                        </div>
-                        <div class="main__subheader">A Star Is Born</div>
-                        <div class="main__text">Lady Gaga & Bradley Cooper</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/showman.png" alt="The Greatest Showma">
-                        </div>
-                        <div class="main__subheader">The Greatest Showman</div>
-                        <div class="main__text">Benj Paskek & Justin Paul</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/fantastic-beasts.png" alt="Fantastic Beasts">
-                        </div>
-                        <div class="main__subheader">Fantastic Beasts</div>
-                        <div class="main__text">James Newton Howard</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/sherlock.png" alt="Sherlock">
-                        </div>
-                        <div class="main__subheader">Sherlock</div>
-                        <div class="main__text">David Arnold & Michael Price</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/parasite.png" alt="parasite">
-                        </div>
-                        <div class="main__subheader">Parasite</div>
-                        <div class="main__text">Jung Jae Il</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/avengers.png" alt="Avengers">
-                        </div>
-                        <div class="main__subheader">The Avengers</div>
-                        <div class="main__text">Alan Silvestri</div>
-                    </div>
-                    <div class="main__item">
-                        <div class="main__picture">
-                            <img src="./assets/img/stranger-things.png" alt="Stranger Things">
-                        </div>
-                        <div class="main__subheader">Stranger Things</div>
-                        <div class="main__text">Kyle Dixon & Michael Stein</div>
-                    </div>
-                </div>
+                <div class="main__items"></div>
             </main>
-            <!-- <audio id="audioPlayer" controls>
-                <source src="./assets/audio/A_Kiss.mp3" type="audio/mpeg">
-                <source src="./assets/audio/A_Kiss.mp3" type="audio/ogg">
-                <source src="./assets/audio/A_Kiss.mp3" type="audio/wav">
-                Your browser does not support the audio element.
-            </audio>
-            <button id="playButton">Воспроизвести</button>
-            <button id="pauseButton">Пауза</button> -->
         </div>
         <aside class="aside">
             <div class="aside__header">
@@ -133,51 +54,18 @@
             </div>
             <div class="range">
                 <div class="bar">
-                    <input type="range" id="seek" min="0" max="100">
-                    <div class="bar2"></div>
-                    <div class="dot"></div>
                 </div>
                 <div class="time">
                     <div class="start">00:00</div>
-                    <div class="end">03:39</div>
+                    <div class="end"></div>
                 </div>
             </div>
+            <audio class="main__audio" src=""></audio>
             <ul class="aside__list">
-                <li class="aside__item">
-                    <div class="wave">
-                        <div class="wave1"></div>
-                        <div class="wave1"></div>
-                        <div class="wave1"></div>
-                        <div class="wave1"></div>
-                    </div>
-                    <div class="aside__num grey">1</div>
-                    <div class="aside__song">Arabian Nights (2019)</div>
-                    <div class="aside__singer grey">Will Smith</div>
-                    <div class="aside__total grey">03:13</div>
-
-                </li>
-                <li class="aside__item">
-                    <div class="aside__num grey">1</div>
-                    <div class="aside__song">Arabian Nights (2019)</div>
-                    <div class="aside__singer grey">Will Smith</div>
-                    <div class="aside__total grey">03:13</div>
-                </li>
-                <li class="aside__item">
-                    <div class="aside__num grey">1</div>
-                    <div class="aside__song">Arabian Nights (2019)</div>
-                    <div class="aside__singer grey">Will Smith</div>
-                    <div class="aside__total grey">03:13</div>
-                </li>
-                <li class="aside__item">
-                    <div class="aside__num grey">1</div>
-                    <div class="aside__song">Arabian Nights (2019)</div>
-                    <div class="aside__singer grey">Will Smith</div>
-                    <div class="aside__total grey">03:13</div>
-                </li>
             </ul>
         </aside>    
     </div>
     
-    <script src="./assets/js/script.js" ></script>
+    <script src="./assets/js/bundle.js" ></script>
 </body>
 </html>
