@@ -8,7 +8,7 @@
     }
     &__items {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(192px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(192px, 200px));
         grid-auto-rows: repeat(auto-fit, minmax(232px, 1fr));;
         gap: 56px 32px;
     }
@@ -19,7 +19,7 @@
     &__picture {
         margin-bottom: 8px;
         border-radius: 12px;
-        &:hover, &:active{
+        &:hover {
             box-shadow: 10px 10px 10px grey;
         }
         img{
@@ -36,4 +36,10 @@
         line-height: 12px;
         color: rgba(58, 58, 58, .6);
     }
+}
+.hide {
+    display: none;
+}
+.active{
+    box-shadow: 10px 10px 10px grey;
 }

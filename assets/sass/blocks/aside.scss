@@ -1,5 +1,6 @@
 .aside {
     padding: 24px;
+    position: relative;
     &__header {
         display: flex;
         gap: 16px;
@@ -87,6 +88,7 @@
         cursor: pointer;
         transition: background-color .4s ease;
         border-radius: 6px;
+        position: relative;
         &:hover {
             background-color: #FFFFFF;
             box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
@@ -162,6 +164,26 @@
 }
 .grey {
     color: rgba(255, 255, 255, .4);
+}
+.btns{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    .burger, .close{
+        width: 32px;
+        position: absolute;
+
+        img {
+            width: 100%;
+        }
+    }
+    .close{
+        top: 0px;
+        right: 0px;
+        z-index: 15;
+        display: none;
+    }
 }
 @keyframes wave {
     0% {
