@@ -142,7 +142,9 @@ window.addEventListener("DOMContentLoaded", async() => {
 		let songDuration = mainAudio.duration;
 
 		mainAudio.currentTime = (clickedOffsetX / barWidthVal) * songDuration;
-		mainAudio.play();
+		if(!mainAudio.paused){
+			mainAudio.play();
+		}
 	});
 
 
