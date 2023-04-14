@@ -9,9 +9,9 @@
 <li>Наверху есть поиск по альбомам. При клике на Enter фильтруется список альбомов по названию.</li>
 </ol>
 
-<ul> Технологии:
-  <li>HTML5б JavaScript, SCSS, Webpack</li>
-</ul>
+<div> Технологии:
+  <p>HTML5, JavaScript, SCSS, Webpack</p>
+</div>
 
 <h3>Результат можно посмотреть, перейдя по ссылке:</h3>
 https://melnikova26.github.io/music_player/
