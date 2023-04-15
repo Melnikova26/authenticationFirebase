@@ -3,8 +3,8 @@ import getResource from './services/services';
 import { getHeader, getSongList } from './modules/aside';
 
 window.addEventListener("DOMContentLoaded", async() => {
+
 	const data = await getResource();
-	console.log(data);
 	cards();
 	const wrapper = document.querySelector('.wrapper__img'),
 		  container = document.querySelector('.container'),
@@ -19,51 +19,60 @@ window.addEventListener("DOMContentLoaded", async() => {
 	let runningTime = 0;
 	let isPausing =false;
 	let source = '';
+	let indexCurrent = 0;
+	const wave = `
+			<div class="wave">
+				<div class="wave1"></div>
+				<div class="wave1"></div>
+				<div class="wave1"></div>
+				<div class="wave1"></div>
+			</div>
+		`;
+	function numText(id) {
+		return `<div class="aside__num grey">${id}</div>`;
+	}
 
-	function play(nums, waves, songs){
-		nums.forEach((item, index) => {
-			item.addEventListener('click', () => {
-				nums.forEach(elem => {
-					elem.style.visibility = 'visible';
+
+	function play(nums, songs){
+		const plays = document.querySelectorAll('.play');
+		const pauses = document.querySelectorAll('.pause');
+		plays.forEach((item, index) => {
+			item.addEventListener('click', (event) => {
+				pauses.forEach(pause => {
+					pause.style.visibility = 'hidden';
 				});
-				waves.forEach(wave => {
-					wave.style.visibility = 'hidden';
+				nums.forEach((num, i) => {
+					num.innerHTML = numText(i + 1);
 				});
+
 				mainAudio.src = songs[index].src;
-				console.log(mainAudio.src, songs[index].src, document.querySelectorAll('.wave')[index]);
 				item.style.visibility = 'hidden';
-				document.querySelectorAll('.wave')[index].style.visibility = 'visible';
+				pauses[index].style.visibility = 'visible';
+				indexCurrent = index;
+				nums[index].innerHTML = wave;
 				if(isPausing && mainAudio.src === source){
 					mainAudio.currentTime = runningTime;
 					isPausing = false;
 				}
 				mainAudio.play();
 				runWithAnimation('running');
-				console.log(runningTime);
-				console.log(isPausing);
 			});
 		});
 	}
 
-	function pause(waves){
-		waves.forEach((item, index) => {
+	function pause(songs, nums){
+		const pauses = document.querySelectorAll('.pause');
+		const plays = document.querySelectorAll('.play');
+		pauses.forEach((item, index) => {
 			item.addEventListener('click', () => {
 				source = mainAudio.src;
 				item.style.visibility = 'hidden';
-				document.querySelectorAll('.aside__num')[index].style.visibility = 'visible';
+				plays[index].style.visibility = 'visible';
 				mainAudio.currentTime = runningTime;
+				nums[index].innerHTML = numText(songs[index].id);
 				mainAudio.pause();
-				let currentMin = Math.floor(runningTime / 60);
-				let currentSec = Math.floor(runningTime % 60);
-				if(currentSec < 10){
-					currentSec = `0${currentSec}`;
-				}
-				if(currentMin < 10){
-					currentMin = `0${currentMin}`;
-				}
-				musicCurrentTime.innerHTML = `${currentMin}:${currentSec}`;
+				currentTotalTime(runningTime, musicCurrentTime)
 				isPausing = true;
-				console.log(isPausing);
 			});
 		});
 	}
@@ -109,11 +118,53 @@ window.addEventListener("DOMContentLoaded", async() => {
 					wrapper.style.backgroundImage = `url(${img})`;
 					getHeader(img, title, artist, aside);
 					getSongList(songs, parentSongList);
-					const nums = document.querySelectorAll('.aside__num');
-					const waves = document.querySelectorAll('.wave');
+					const songItems = document.querySelectorAll('.aside__item');
 
-					play(nums, waves, songs);
-					pause(waves);
+					songItems.forEach((item, i) => {
+						item.addEventListener('mouseover', (e) => {
+							const newItem = e.target.closest('.aside__item');
+							if(item == newItem || item == newItem){
+								const playPause = newItem.querySelector('.aside__play-pause');
+								const play = newItem.querySelector('.play');
+								const pause = newItem.querySelector('.pause');
+								const pauses = document.querySelectorAll('.pause');
+								const num = newItem.querySelector('.aside__num');
+								playPause.style.visibility = 'visible';
+								num.style.visibility = 'hidden';
+								if(mainAudio.paused){
+									play.style.visibility = 'visible';
+								} else {
+									if(pause === pauses[indexCurrent]){
+										pauses[indexCurrent].style.visibility = 'visible';
+									} else {
+										pause.style.visibility = 'hidden';
+										play.style.visibility = 'visible';
+									}
+									
+								}
+							}
+						});
+						item.addEventListener('mouseout', (e) => {
+							if(item == e.target.closest('.aside__item') || item == e.target){
+								const newItem = e.target.closest('.aside__item');
+								const playPause = document.querySelectorAll('.aside__play-pause')[i];
+								const play = document.querySelectorAll('.play')[i];
+								const pauses = document.querySelectorAll('.pause');
+								const num = newItem.querySelector('.aside__num');
+								playPause.style.visibility = 'hidden';
+								play.style.visibility = 'hidden';
+								pauses.forEach(pause => {
+									pause.style.visibility = 'hidden';
+								})
+								
+								num.style.visibility= "visible";
+							}
+							
+						});
+					});
+					const nums = document.querySelectorAll('.aside__num');
+					play(nums, songs);
+					pause(songs, nums);
 					
 				} 
 			});

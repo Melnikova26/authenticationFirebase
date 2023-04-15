@@ -19,11 +19,9 @@ function getSongList(songs, parentSongList) {
         const element = document.createElement('li');
         element.classList.add("aside__item");
         element.innerHTML = `
-                <div class="wave">
-                    <div class="wave1"></div>
-                    <div class="wave1"></div>
-                    <div class="wave1"></div>
-                    <div class="wave1"></div>
+                <div class="aside__play-pause">
+                    <img class="play" src='./assets/icons/play.svg' alt="icon">
+                    <img class="pause" src='./assets/icons/pause.svg' alt="icon">
                 </div>
                 <div class="aside__num grey">${elem.id}</div>
                 <div class="aside__song">${elem.title}</div>
