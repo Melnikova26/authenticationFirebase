@@ -15,7 +15,6 @@ function search(card, selector, mainSubHeader, items) {
                 });
                 const showItems = document.querySelectorAll(`${card}:not(.${selector})`);
                 showItems[0].click();
-                console.log(showItems[0]);
             } else {
                 items.forEach(item => {
                     item.classList.remove(selector);
